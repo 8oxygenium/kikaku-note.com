@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>貴金属・延べ棒サイズ早見表 | kikaku-note.com/metal</title>
+  <meta name="description" content="金・銀・プラチナ・銅の単位、純度、重さ、サイズ感を確認できる早見表サイト。最新価格は外部サイトで確認するためのリンク集を掲載しています。">
+  <link rel="canonical" href="https://kikaku-note.com/metal/">
+  <meta property="og:title" content="貴金属・延べ棒サイズ早見表" />
+  <meta property="og:description" content="金・銀・プラチナ・銅の単位、純度、重さ、サイズ感を確認できる早見表サイト。最新価格は外部サイトで確認するためのリンク集を掲載しています。" />
+  <meta property="og:url" content="https://kikaku-note.com/metal/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="貴金属・延べ棒サイズ早見表" />
+  <meta name="twitter:description" content="金・銀・プラチナ・銅の単位、純度、重さ、サイズ感を確認できる早見表サイト。最新価格は外部サイトで確認するためのリンク集を掲載しています。" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3M3YRW4B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3M3YRW4B7');
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg:#f7f7f6;
+      --surface:#ffffff;
+      --surface-strong:#eae8e5;
+      --text:#1d1d1b;
+      --muted:#5a5a58;
+      --accent:#1a73e8;
+      --border:#dedcd7;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--bg);color:var(--text);line-height:1.6;}
+    .page{width:min(100% - 64px,1560px);margin:0 auto;padding:24px 0 48px;}
+    header{padding:18px 0 12px;}
+    h1{font-size:clamp(2rem,4vw,2.8rem);margin:.2em 0;line-height:1.05;}
+    p.lead{max-width:720px;color:var(--muted);font-size:1rem;margin:0;}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:24px;}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(15,18,20,.06);display:flex;flex-direction:column;min-width:0;}
+    .card h2{margin:0 0 .6em;font-size:1.2rem;}
+    .card p{margin:.7em 0;}
+    .card-body{flex:1;}
+    .purity-card{display:flex;flex-direction:column;}
+    .purity-card .card-body{flex:1;}
+    .purity-desc{min-height:6.8em;}
+    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:16px;min-width:0;}
+    .table-scroll table{margin-top:0;min-width:100%;}
+    .helper-table{min-width:700px;width:100%;border-collapse:collapse;font-size:.9rem;}
+    .helper-table th,.helper-table td{padding:.7em .9em;text-align:left;border:1px solid var(--border);white-space:nowrap;}
+    .helper-table th:last-child,.helper-table td:last-child{white-space:normal;min-width:12em;}
+    .helper-table th{background:var(--surface-strong);font-weight:600;}
+    .converter{display:grid;gap:12px;margin-top:10px;}
+    .converter label{display:flex;flex-direction:column;gap:8px;font-size:.95rem;color:var(--text);}
+    .converter input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:var(--bg);font-size:1rem;color:var(--text);}
+    .converter-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:2px;}
+    .converter-actions button{flex:1 1 120px;padding:12px 14px;border:none;border-radius:14px;background:var(--accent);color:#fff;font-size:1rem;cursor:pointer;}
+    .converter-actions button:hover{opacity:.95;}
+    .converter-result{margin-top:10px;padding:14px;border-radius:14px;background:var(--surface-strong);color:var(--text);font-weight:600;}
+    .metal-tools-grid{display:grid;gap:18px;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:dense;margin-top:24px;}
+    .metal-tools-grid .weight-card{grid-column:span 3;}
+    .metal-tools-grid .converter-card{grid-column:span 1;}
+    .metal-tools-grid .weight-card, .metal-tools-grid .converter-card{display:flex;flex-direction:column;}
+    .badge{display:inline-flex;margin:.2em .3em .2em 0;padding:.4em .75em;border-radius:999px;background:#eef5ff;color:#0b3d91;font-size:.86rem;}
+    .search-box{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 8px;}
+    .search-box input{flex:1 1 220px;padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:var(--surface);font-size:.98rem;color:var(--text);}
+    .search-box .hint{margin:auto 0;color:var(--muted);font-size:.95rem;}
+    table{width:100%;table-layout:auto;border-collapse:collapse;margin-top:16px;font-size:.95rem;}
+    th,td{padding:.8em .8em;text-align:left;vertical-align:top;border:1px solid var(--border);word-break:keep-all;overflow-wrap:normal;}
+    th:not(:last-child),td:not(:last-child){white-space:nowrap;}
+    th:last-child,td:last-child{white-space:normal;}
+    th{background:var(--surface-strong);font-weight:700;}
+    .note{font-size:.95rem;color:var(--muted);margin:0.8em 0 0;padding-left:0.8em;border-left:3px solid var(--accent);}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .footer{margin-top:32px;padding-top:16px;border-top:1px solid var(--border);font-size:.92rem;color:var(--muted);}
+    .external-links a{display:block;margin:.55em 0;}
+    @media (max-width:1280px){.metal-tools-grid,.grid{grid-template-columns:repeat(2,minmax(0,1fr));} .metal-tools-grid .weight-card{grid-column:span 2;} .metal-tools-grid .converter-card{grid-column:span 2;} .purity-desc{min-height:auto;}}
+    [hidden]{display:none!important;}
+    @media (max-width:760px){.metal-tools-grid,.grid{grid-template-columns:1fr;} .metal-tools-grid .weight-card, .metal-tools-grid .converter-card{grid-column:auto;}}
+    @media (max-width:640px){.page{width:min(100% - 32px,1560px);padding:18px 0 36px;} .card{padding:18px;} .search-box{flex-direction:column;} .table-scroll{margin-top:12px;}}
+.affiliate-footer {
+  margin: 28px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, var(--line, #dedbd2));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--muted, #666);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.affiliate-label {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted, #666);
+}
+
+.affiliate-note {
+  margin: 0 0 10px;
+}
+
+.amazon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--accent, #006c67);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-ink, var(--accent, #006c67));
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amazon-button:hover,
+.amazon-button:focus-visible {
+  background: var(--soft, #f4f1ea);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .affiliate-footer {
+    margin: 22px 0 14px;
+    padding: 12px 14px;
+  }
+
+  .amazon-button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="badge">kikaku-note.com/metal</p>
+      <h1>貴金属・延べ棒サイズ早見表</h1>
+      <p class="lead">金・銀・プラチナ・銅の単位、純度、重さ、サイズ感を1ページで整理。価格は表示せず、最新価格は外部サイトで確認する構成です。</p>
+    </header>
+
+    <section class="search-box" aria-label="検索と絞り込み">
+      <input id="kw" type="search" placeholder="例: 金、銀、プラチナ、トロイオンス、K18、SV925" aria-label="キーワード検索" />
+      <div class="hint">カードをキーワードで絞り込みます。</div>
+    </section>
+
+    <div class="metal-tools-grid">
+      <article class="card weight-card" data-keywords="1g 5g 10g 20g 50g 100g 500g 1kg 1トロイオンス oz トロイオンス">
+        <h2>重さとサイズの早見表</h2>
+        <p>補助的な重さの目安です。スマホでは横スクロールで見られます。</p>
+        <div class="table-scroll">
+          <table class="helper-table">
+            <thead>
+              <tr><th>重さ</th><th>グラム</th><th>トロイオンス</th><th>目安</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1g</td><td>1g</td><td>0.032 t oz</td><td>小型プレート</td></tr>
+              <tr><td>5g</td><td>5g</td><td>0.161 t oz</td><td>小さめコイン</td></tr>
+              <tr><td>10g</td><td>10g</td><td>0.322 t oz</td><td>小型インゴット</td></tr>
+              <tr><td>20g</td><td>20g</td><td>0.643 t oz</td><td>小型バー</td></tr>
+              <tr><td>50g</td><td>50g</td><td>1.608 t oz</td><td>厚みのあるバー</td></tr>
+              <tr><td>100g</td><td>100g</td><td>3.215 t oz</td><td>小型インゴット</td></tr>
+              <tr><td>500g</td><td>500g</td><td>16.075 t oz</td><td>大型バー</td></tr>
+              <tr><td>1kg</td><td>1000g</td><td>32.151 t oz</td><td>大型インゴット</td></tr>
+              <tr><td>1トロイオンス</td><td>31.103g</td><td>1.000 t oz</td><td>国際的な取引用単位</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+      <article class="card converter-card" data-keywords="g トロイオンス 変換 ツール oz">
+        <h2>g・トロイオンス変換ツール</h2>
+        <div class="converter">
+          <label>グラム → トロイオンス
+            <input id="gram-input" type="number" min="0" step="any" placeholder="例: 31.1034768" aria-label="グラム入力" />
+          </label>
+          <label>トロイオンス → グラム
+            <input id="troy-input" type="number" min="0" step="any" placeholder="例: 1" aria-label="トロイオンス入力" />
+          </label>
+          <div class="converter-actions">
+            <button type="button" id="converter-clear">クリア</button>
+          </div>
+          <div class="converter-result" id="converter-result" aria-live="polite"></div>
+        </div>
+        <p class="note">1トロイオンス = 31.1034768g を使って計算します。入力すると自動で変換結果が表示されます。</p>
+      </article>
+    </div>
+
+    <div class="grid" id="cards">
+      <article class="card purity-card" data-keywords="金 ゴールド K24 K22 K18 K14 24金 22金 18金 14金">
+        <h2>金の純度と代表表記</h2>
+        <div class="card-body purity-desc">
+          <p>金はK(カラット)表記で純度を示します。K24は純金、K22は91.7%、K18は75%、K14は58.3%です。金は延べ棒だけでなくコインやペンダントにも使われます。</p>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>表記</th><th>純度</th><th>備考</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>K24</td><td>99.99%</td><td>純金</td></tr>
+              <tr><td>K22</td><td>91.7%</td><td>貴金属地金、ジュエリー</td></tr>
+              <tr><td>K18</td><td>75%</td><td>アクセサリーで一般的</td></tr>
+              <tr><td>K14</td><td>58.3%</td><td>耐久性重視の素材</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card purity-card" data-keywords="銀 シルバー SV999 SV925 925 スターリングシルバー">
+        <h2>銀の純度と代表表記</h2>
+        <div class="card-body purity-desc">
+          <p>銀は主にSV999やSV925で表記します。SV999は純銀に近い99.9%、SV925は92.5%でコインやジュエリーに広く使われます。</p>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>表記</th><th>純度</th><th>備考</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>SV999</td><td>99.9%</td><td>純銀に近い地金</td></tr>
+              <tr><td>SV925</td><td>92.5%</td><td>スターリングシルバー</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card purity-card" data-keywords="プラチナ Pt999 Pt950 Pt900 900 950 999">
+        <h2>プラチナの純度と代表表記</h2>
+        <div class="card-body purity-desc">
+          <p>プラチナはPt表記で純度を示します。Pt999は99.9%、Pt950は95%、Pt900は90%です。ジュエリーや工業用途でも利用されます。</p>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>表記</th><th>純度</th><th>備考</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pt999</td><td>99.9%</td><td>純度高めの地金</td></tr>
+              <tr><td>Pt950</td><td>95%</td><td>日本のジュエリー品質</td></tr>
+              <tr><td>Pt900</td><td>90%</td><td>耐久性重視の素材</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="card" data-keywords="銅 Cu 重さ サイズ インゴット コイン">
+        <h2>銅の特性と見方</h2>
+        <p>銅はCu99.9など純度表示が使われます。貴金属の中では価格変動はあるものの、サイズ感や重量比較の基準としても使われます。</p>
+        <p class="note">本ページは価格表示を行いません。サイズと純度の確認に特化しています。</p>
+      </article>
+
+
+      <article class="card" data-keywords="インゴット コイン サイズ 感覚 比較 金属">
+        <h2>インゴットとコインのサイズ感</h2>
+        <p>貴金属はインゴットとコインで形状が異なります。同じ重さでも見た目は厚さや幅で変わるため、購入前にサイズ感を確認しましょう。</p>
+        <p>主な形状例:</p>
+        <ul>
+          <li>インゴット: 平たい長方形、重量ごとに厚みと長さが変わる</li>
+          <li>コイン: 直径と厚みでサイズ感が分かる</li>
+        </ul>
+      </article>
+
+      <article class="card" data-keywords="純度表記 見方 g oz t oz トロイオンス 単位">
+        <h2>純度表記の見方と単位の違い</h2>
+        <p>純度は金属の含有率を示します。Kは金のカラット、PtやSVはプラチナ・銀の純度を表します。純度が高いほど素材価値が高くなります。</p>
+        <p><strong>g (グラム)</strong> は質量の基本単位です。<strong>oz</strong> はアボイダンス・オンス、<strong>t oz</strong> はトロイオンスと呼ばれ、貴金属では31.1035gが1トロイオンスです。</p>
+      </article>
+
+      <article class="card" data-keywords="注意 価格 注意点 外部リンク 価格確認 変動">
+        <h2>貴金属価格を見るときの注意</h2>
+        <p>価格は日々変動します。本ページでは価格を自動取得していません。最新価格・売買価格・手数料・税込/税抜の扱いは、各外部サイトまたは取扱事業者の表示をご確認ください。</p>
+        <p class="note">リアルタイム価格の表示や投資助言は行いません。情報確認は必ず外部サイトでお願いします。</p>
+      </article>
+
+      <article class="card" data-keywords="リンク 外部サイト 最新価格 確認 BullionVault TradingEconomics Asahi">
+        <h2>現在価格を確認する</h2>
+        <div class="external-links">
+          <a href="https://gold.bullionvault.jp/chart-popup.do" target="_blank" rel="noopener">BullionVault 金価格チャート</a>
+          <a href="https://jp.tradingeconomics.com/commodity/gold" target="_blank" rel="noopener">Trading Economics 金価格</a>
+          <a href="https://ec.asahigrellia.com/view/page/market-watch" target="_blank" rel="noopener">Asahi Online Store 貴金属相場情報</a>
+        </div>
+        <p class="note">価格は日々変動します。このページでは価格を自動取得していません。最新価格・売買価格・手数料・税込/税抜の扱いは、各外部サイトまたは取扱事業者の表示をご確認ください。</p>
+      </article>
+    </div>
+
+    <section class="footer">
+      <p>このページは Cloudflare Pages での静的公開を想定した1ページ完結型の早見表です。画像は使わず、軽量なカード型デザインでスマートフォンにも対応しています。</p>
+    </section>
+  </main>
+
+  <script>
+    const input = document.getElementById('kw');
+    const cards = document.querySelectorAll('.page .card');
+    input.addEventListener('input', () => {
+      const term = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const keywords = card.dataset.keywords || '';
+        const matched = term === '' || keywords.toLowerCase().includes(term);
+        card.hidden = !matched;
+      });
+    });
+
+    const factor = 31.1034768;
+    const gramInput = document.getElementById('gram-input');
+    const troyInput = document.getElementById('troy-input');
+    const resultBox = document.getElementById('converter-result');
+    const clearButton = document.getElementById('converter-clear');
+
+    function formatNumber(value) {
+      return Number(value.toFixed(6)).toString();
+    }
+
+    function updateResult(text) {
+      resultBox.textContent = text;
+    }
+
+    function handleGramInput() {
+      const g = parseFloat(gramInput.value);
+      if (!gramInput.value || Number.isNaN(g)) {
+        updateResult('');
+        return;
+      }
+      troyInput.value = '';
+      updateResult(`${g} g = ${formatNumber(g / factor)} トロイオンス`);
+    }
+
+    function handleTroyInput() {
+      const t = parseFloat(troyInput.value);
+      if (!troyInput.value || Number.isNaN(t)) {
+        updateResult('');
+        return;
+      }
+      gramInput.value = '';
+      updateResult(`${t} トロイオンス = ${formatNumber(t * factor)} g`);
+    }
+
+    gramInput.addEventListener('input', handleGramInput);
+    troyInput.addEventListener('input', handleTroyInput);
+
+    clearButton.addEventListener('click', () => {
+      gramInput.value = '';
+      troyInput.value = '';
+      updateResult('');
+      gramInput.focus();
+    });
+  </script>
+  <section class="affiliate-footer" aria-label="広告とAmazonアソシエイトについて">
+    <p class="affiliate-label">PR</p>
+    <p class="affiliate-note">このページにはアフィリエイトリンクを含みます。<br>Amazonのアソシエイトとして、規格ノートは適格販売により収入を得ています。</p>
+<<<<<<< HEAD
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=関連商品&tag=YOUR_TRACKING_ID-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+=======
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=デジタルスケール&tag=kikakunote-footer-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+>>>>>>> c38f473391e06f679704e2bddd7e47c8b5db83b2
+  </section>
+</body>
+</html>

@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>USB端子の種類一覧・形状早見表｜USB-A・USB-C・Micro USBの違い｜規格ノート</title>
+  <meta name="description" content="USB-A、USB-B、Mini USB、Micro USB、USB-C、Thunderboltなど、USB端子の形状・見分け方・規格・転送速度・給電能力を一覧で確認できる早見表です。">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3M3YRW4B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3M3YRW4B7');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+      color: #111827;
+      background: #f8fafc;
+    }
+
+    header,
+    main,
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+
+    h2 {
+      margin-top: 40px;
+      padding-left: 12px;
+      border-left: 6px solid #2563eb;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: #374151;
+    }
+
+    .search-box {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .quick-links a,
+    #searchResults a {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #2563eb;
+      border-radius: 6px;
+      background: #eff6ff;
+    }
+
+    #searchResults {
+      margin-bottom: 0;
+    }
+
+    .warning {
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #166534;
+      font-weight: 700;
+      margin: 16px 0 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f4fbf;
+      color: #ffffff;
+      padding: 12px;
+      border: 1px solid #3b82f6;
+      text-align: center;
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      vertical-align: middle;
+      background: #ffffff;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #4b5563;
+      margin-top: 8px;
+    }
+
+    .connector-grid,
+    .card-grid,
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .connector-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .connector-card,
+    .info-card,
+    .timeline-card {
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    }
+
+    .connector-card {
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .svg-wrap,
+    .mini-svg-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .svg-wrap {
+      min-height: 80px;
+      margin: 8px 0;
+    }
+
+    .svg-wrap svg {
+      max-width: 130px;
+      height: auto;
+    }
+
+    .mini-svg-wrap {
+      min-height: 64px;
+      margin: 8px 0 12px;
+    }
+
+    .mini-svg-wrap svg {
+      max-width: 110px;
+      height: auto;
+    }
+
+    .timeline-card .mini-svg-wrap {
+      min-height: 56px;
+      margin-top: 12px;
+    }
+
+    .dot-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #2563eb;
+      border-radius: 999px;
+      flex: 0 0 auto;
+    }
+
+    .timeline {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      position: relative;
+    }
+
+    .timeline-card {
+      text-align: center;
+    }
+
+    .year {
+      font-weight: 800;
+      font-size: 20px;
+      color: #1d4ed8;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+      }
+
+      .top-link {
+        display: inline-block;
+        margin-top: 12px;
+      }
+
+      main,
+      header,
+      footer {
+        padding: 16px;
+      }
+    }
+
+.affiliate-footer {
+  margin: 28px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, var(--line, #dedbd2));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--muted, #666);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.affiliate-label {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted, #666);
+}
+
+.affiliate-note {
+  margin: 0 0 10px;
+}
+
+.amazon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--accent, #006c67);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-ink, var(--accent, #006c67));
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amazon-button:hover,
+.amazon-button:focus-visible {
+  background: var(--soft, #f4f1ea);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .affiliate-footer {
+    margin: 22px 0 14px;
+    padding: 12px 14px;
+  }
+
+  .amazon-button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+  <!-- SVGアイコン定義 -->
+  <svg width="0" height="0" style="position:absolute; left:-9999px; overflow:hidden;" aria-hidden="true" focusable="false">
+    <symbol id="icon-usb-a" viewBox="0 0 160 80">
+      <rect x="20" y="22" width="120" height="36" rx="4" fill="#222" stroke="#000" stroke-width="4"/>
+      <rect x="30" y="30" width="100" height="20" fill="#555"/>
+      <rect x="44" y="38" width="16" height="6" fill="#facc15"/>
+      <rect x="76" y="38" width="16" height="6" fill="#facc15"/>
+      <rect x="108" y="38" width="16" height="6" fill="#facc15"/>
+    </symbol>
+
+    <symbol id="icon-usb-b" viewBox="0 0 160 80">
+      <path d="M55 18 H105 L120 33 V62 H40 V33 Z" fill="#222" stroke="#000" stroke-width="4"/>
+      <rect x="58" y="36" width="44" height="22" fill="#555"/>
+      <rect x="66" y="44" width="10" height="6" fill="#facc15"/>
+      <rect x="86" y="44" width="10" height="6" fill="#facc15"/>
+    </symbol>
+
+    <symbol id="icon-mini-usb" viewBox="0 0 160 80">
+      <path d="M42 28 H118 L128 42 L118 56 H42 L32 42 Z" fill="#222" stroke="#000" stroke-width="4"/>
+      <rect x="50" y="38" width="60" height="8" fill="#555"/>
+      <rect x="58" y="40" width="8" height="4" fill="#facc15"/>
+      <rect x="74" y="40" width="8" height="4" fill="#facc15"/>
+      <rect x="90" y="40" width="8" height="4" fill="#facc15"/>
+    </symbol>
+
+    <symbol id="icon-micro-usb" viewBox="0 0 160 80">
+      <path d="M36 32 H124 L132 48 H28 Z" fill="#222" stroke="#000" stroke-width="4"/>
+      <rect x="50" y="39" width="60" height="7" fill="#555"/>
+      <rect x="58" y="41" width="7" height="3" fill="#facc15"/>
+      <rect x="74" y="41" width="7" height="3" fill="#facc15"/>
+      <rect x="90" y="41" width="7" height="3" fill="#facc15"/>
+    </symbol>
+
+    <symbol id="icon-usb-c" viewBox="0 0 160 80">
+      <rect x="24" y="26" width="112" height="28" rx="14" fill="#222" stroke="#000" stroke-width="4"/>
+      <rect x="38" y="35" width="84" height="10" rx="5" fill="#555"/>
+      <rect x="50" y="38" width="60" height="4" fill="#facc15"/>
+    </symbol>
+
+    <symbol id="icon-thunderbolt" viewBox="0 0 160 80">
+      <rect x="20" y="26" width="96" height="28" rx="14" fill="#222" stroke="#000" stroke-width="4"/>
+      <rect x="34" y="35" width="68" height="10" rx="5" fill="#555"/>
+      <rect x="44" y="38" width="48" height="4" fill="#facc15"/>
+      <path d="M130 14 L112 42 H127 L116 68 L146 32 H130 Z" fill="#111827"/>
+    </symbol>
+  </svg>
+
+  <header>
+    <div>
+      <h1>USB端子の種類一覧</h1>
+      <p class="lead">USBコネクタの形状・規格・転送速度・給電能力をまとめた早見表です。</p>
+    </div>
+    <a class="top-link" href="https://kikaku-note.com/">規格ノート本体へ戻る</a>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <input
+        type="search"
+        id="searchBox"
+        placeholder="端子名を入力　例：USB-C、Micro USB、Thunderbolt"
+      >
+
+      <div class="quick-links">
+        <a href="#usb-a">USB-A</a>
+        <a href="#usb-b">USB-B</a>
+        <a href="#mini-usb">Mini USB</a>
+        <a href="#micro-usb">Micro USB</a>
+        <a href="#usb-c">USB-C</a>
+        <a href="#thunderbolt">Thunderbolt</a>
+      </div>
+
+      <ul id="searchResults"></ul>
+    </section>
+
+    <p class="warning">
+      注意：USB端子は、形が同じでも転送速度・充電性能・映像出力対応が異なる場合があります。
+    </p>
+
+    <h2>USB端子の仕様一覧表</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>コネクタ形状</th>
+            <th>主なUSB規格</th>
+            <th>USB 3.1<br>規格表記</th>
+            <th>USB 3.2<br>規格表記</th>
+            <th>データ転送速度<br>目安</th>
+            <th>給電能力<br>目安</th>
+            <th>USB PD</th>
+            <th>伝送距離<br>目安</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#usb-a">USB-A</a></td>
+            <td>USB 1.1 / 2.0 / 3.x</td>
+            <td>Gen 1 / Gen 2</td>
+            <td>Gen 1 / Gen 2</td>
+            <td>最大480Mbps〜10Gbps程度</td>
+            <td>5V / 0.5〜0.9A程度</td>
+            <td>基本的に非対応</td>
+            <td>数m程度</td>
+          </tr>
+          <tr>
+            <td><a href="#usb-b">USB-B</a></td>
+            <td>USB 1.1 / 2.0 / 3.x</td>
+            <td>Gen 1など</td>
+            <td>Gen 1など</td>
+            <td>最大480Mbps〜5Gbps程度</td>
+            <td>機器仕様による</td>
+            <td>基本的に非対応</td>
+            <td>数m程度</td>
+          </tr>
+          <tr>
+            <td><a href="#mini-usb">Mini USB</a></td>
+            <td>主にUSB 2.0</td>
+            <td>該当なし</td>
+            <td>該当なし</td>
+            <td>最大480Mbps程度</td>
+            <td>5V / 0.1〜0.5A程度</td>
+            <td>非対応</td>
+            <td>数m程度</td>
+          </tr>
+          <tr>
+            <td><a href="#micro-usb">Micro USB</a></td>
+            <td>USB 2.0 / 一部USB 3.0</td>
+            <td>Gen 1相当の場合あり</td>
+            <td>Gen 1相当の場合あり</td>
+            <td>最大480Mbps〜5Gbps程度</td>
+            <td>5V / 0.5〜1.5A程度</td>
+            <td>基本的に非対応</td>
+            <td>数m程度</td>
+          </tr>
+          <tr>
+            <td><a href="#usb-c">USB-C</a></td>
+            <td>USB 2.0 / 3.x / USB4</td>
+            <td>Gen 1 / Gen 2</td>
+            <td>Gen 1 / Gen 2 / Gen 2x2</td>
+            <td>最大480Mbps〜40Gbps以上</td>
+            <td>5V 3A〜USB PD対応時は高出力</td>
+            <td>対応する場合あり</td>
+            <td>規格・ケーブル品質による</td>
+          </tr>
+          <tr>
+            <td><a href="#thunderbolt">Thunderbolt</a></td>
+            <td>Thunderbolt 3 / 4 / 5</td>
+            <td>USB-C形状を使用</td>
+            <td>USB-C形状を使用</td>
+            <td>最大40Gbps〜80Gbps級</td>
+            <td>USB PD対応の場合あり</td>
+            <td>対応する場合あり</td>
+            <td>規格・ケーブル品質による</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">※転送速度・給電能力・伝送距離は、機器・ケーブル・対応規格によって変わります。</p>
+
+    <h2>USBコネクタの形状一覧</h2>
+
+    <div class="connector-grid">
+      <div class="connector-card">
+        USB-A
+        <div class="svg-wrap">
+          <svg aria-label="USB-A端子の簡易図"><use href="#icon-usb-a"></use></svg>
+        </div>
+      </div>
+
+      <div class="connector-card">
+        USB-B
+        <div class="svg-wrap">
+          <svg aria-label="USB-B端子の簡易図"><use href="#icon-usb-b"></use></svg>
+        </div>
+      </div>
+
+      <div class="connector-card">
+        Mini USB
+        <div class="svg-wrap">
+          <svg aria-label="Mini USB端子の簡易図"><use href="#icon-mini-usb"></use></svg>
+        </div>
+      </div>
+
+      <div class="connector-card">
+        Micro USB
+        <div class="svg-wrap">
+          <svg aria-label="Micro USB端子の簡易図"><use href="#icon-micro-usb"></use></svg>
+        </div>
+      </div>
+
+      <div class="connector-card">
+        USB-C
+        <div class="svg-wrap">
+          <svg aria-label="USB-C端子の簡易図"><use href="#icon-usb-c"></use></svg>
+        </div>
+      </div>
+
+      <div class="connector-card">
+        Thunderbolt<br>USB-C形状
+        <div class="svg-wrap">
+          <svg aria-label="Thunderbolt端子の簡易図"><use href="#icon-thunderbolt"></use></svg>
+        </div>
+      </div>
+    </div>
+
+    <h2>それぞれの説明</h2>
+
+    <div class="card-grid">
+      <section class="info-card" id="usb-a">
+        <div class="dot-title"><span class="dot"></span><h3>USB-A</h3></div>
+        <div class="mini-svg-wrap">
+          <svg aria-label="USB-A端子の簡易図"><use href="#icon-usb-a"></use></svg>
+        </div>
+        <p>パソコンや充電器などで長く使われてきた標準的なUSB端子です。USBメモリ、キーボード、マウス、外付けHDDなどで広く使われています。</p>
+        <p>端子に上下の向きがあるため、差し込む向きを確認する必要があります。</p>
+      </section>
+
+      <section class="info-card" id="usb-b">
+        <div class="dot-title"><span class="dot"></span><h3>USB-B</h3></div>
+        <div class="mini-svg-wrap">
+          <svg aria-label="USB-B端子の簡易図"><use href="#icon-usb-b"></use></svg>
+        </div>
+        <p>プリンター、スキャナー、オーディオインターフェースなどの周辺機器でよく使われた端子です。</p>
+        <p>現在はUSB-Cへ移行している機器も増えています。</p>
+      </section>
+
+      <section class="info-card" id="mini-usb">
+        <div class="dot-title"><span class="dot"></span><h3>Mini USB</h3></div>
+        <div class="mini-svg-wrap">
+          <svg aria-label="Mini USB端子の簡易図"><use href="#icon-mini-usb"></use></svg>
+        </div>
+        <p>古いデジタルカメラ、ポータブル機器、ゲーム周辺機器などで使われていた小型端子です。</p>
+        <p>現在はMicro USBやUSB-Cに置き換わっています。</p>
+      </section>
+
+      <section class="info-card" id="micro-usb">
+        <div class="dot-title"><span class="dot"></span><h3>Micro USB</h3></div>
+        <div class="mini-svg-wrap">
+          <svg aria-label="Micro USB端子の簡易図"><use href="#icon-micro-usb"></use></svg>
+        </div>
+        <p>少し前のAndroidスマートフォン、モバイルバッテリー、ワイヤレスイヤホンなどで広く使われた端子です。</p>
+        <p>薄く小さい形状ですが、差し込む向きがあります。</p>
+      </section>
+
+      <section class="info-card" id="usb-c">
+        <div class="dot-title"><span class="dot"></span><h3>USB-C</h3></div>
+        <div class="mini-svg-wrap">
+          <svg aria-label="USB-C端子の簡易図"><use href="#icon-usb-c"></use></svg>
+        </div>
+        <p>上下どちらの向きでも差し込める新しい形状のUSB端子です。スマートフォン、ノートPC、タブレット、外付けSSDなどで広く使われています。</p>
+        <p>ただし、形がUSB-Cでも、転送速度・映像出力・給電能力は機器やケーブルによって異なります。</p>
+      </section>
+
+      <section class="info-card" id="thunderbolt">
+        <div class="dot-title"><span class="dot"></span><h3>Thunderbolt</h3></div>
+        <div class="mini-svg-wrap">
+          <svg aria-label="Thunderbolt端子の簡易図"><use href="#icon-thunderbolt"></use></svg>
+        </div>
+        <p>USB-Cと同じ形状の端子を使う高速接続規格です。外付けSSD、ドック、映像出力、業務用周辺機器などで使われます。</p>
+        <p>USB-Cとの見分けには、稲妻マークや機器仕様の確認が重要です。</p>
+      </section>
+    </div>
+
+    <h2>USBコネクター年表</h2>
+
+    <div class="timeline">
+      <div class="timeline-card">
+        <div class="year">1996〜</div>
+        <h3>USB 1.1</h3>
+        <div class="mini-svg-wrap">
+          <svg aria-label="USB-A端子の簡易図"><use href="#icon-usb-a"></use></svg>
+        </div>
+        <p>最大12Mbps。USB-A / USB-Bが普及。</p>
+      </div>
+
+      <div class="timeline-card">
+        <div class="year">2000〜</div>
+        <h3>USB 2.0</h3>
+        <div class="mini-svg-wrap">
+          <svg aria-label="Mini USB端子の簡易図"><use href="#icon-mini-usb"></use></svg>
+        </div>
+        <p>最大480Mbps。Mini USBやMicro USBが広がる。</p>
+      </div>
+
+      <div class="timeline-card">
+        <div class="year">2008〜</div>
+        <h3>USB 3.0</h3>
+        <div class="mini-svg-wrap">
+          <svg aria-label="Micro USB端子の簡易図"><use href="#icon-micro-usb"></use></svg>
+        </div>
+        <p>最大5Gbps。USB 3.x系の高速化が始まる。</p>
+      </div>
+
+      <div class="timeline-card">
+        <div class="year">2013〜</div>
+        <h3>USB 3.1</h3>
+        <div class="mini-svg-wrap">
+          <svg aria-label="USB-C端子の簡易図"><use href="#icon-usb-c"></use></svg>
+        </div>
+        <p>Gen 1 / Gen 2表記。最大10Gbps級へ。</p>
+      </div>
+
+      <div class="timeline-card">
+        <div class="year">2017〜</div>
+        <h3>USB 3.2</h3>
+        <div class="mini-svg-wrap">
+          <svg aria-label="USB-C端子の簡易図"><use href="#icon-usb-c"></use></svg>
+        </div>
+        <p>Gen 2x2などの表記が登場。USB-C前提の高速化。</p>
+      </div>
+
+      <div class="timeline-card">
+        <div class="year">2019〜</div>
+        <h3>USB4</h3>
+        <div class="mini-svg-wrap">
+          <svg aria-label="Thunderbolt端子の簡易図"><use href="#icon-thunderbolt"></use></svg>
+        </div>
+        <p>最大40Gbps級。Thunderbolt 3との互換性も重要に。</p>
+      </div>
+    </div>
+
+    <p class="warning">
+      USBの規格・性能は、端子の形だけでは判断できません。購入時は対応規格、転送速度、給電能力、ケーブル仕様を確認してください。
+    </p>
+  </main>
+
+  <section class="affiliate-footer" aria-label="広告とAmazonアソシエイトについて">
+    <p class="affiliate-label">PR</p>
+    <p class="affiliate-note">このページにはアフィリエイトリンクを含みます。<br>Amazonのアソシエイトとして、規格ノートは適格販売により収入を得ています。</p>
+<<<<<<< HEAD
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=関連商品&tag=YOUR_TRACKING_ID-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+=======
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=USBケーブル&tag=kikakunote-footer-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+>>>>>>> 415b54b3ac35d139454dff3c2bc484d42206f816
+  </section>
+
+  <footer>
+    <span>© 規格ノート</span>
+    <a href="https://kikaku-note.com/">規格ノート本体へ戻る</a>
+  </footer>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const searchResults = document.getElementById('searchResults');
+
+    const items = [
+      { name: 'USB-A', id: 'usb-a', keywords: 'usba usb-a 標準 長方形 パソコン 充電器 usbメモリ' },
+      { name: 'USB-B', id: 'usb-b', keywords: 'usbb usb-b プリンター スキャナー オーディオインターフェース' },
+      { name: 'Mini USB', id: 'mini-usb', keywords: 'mini usb mini-usb ミニusb 古いデジカメ ゲーム機器' },
+      { name: 'Micro USB', id: 'micro-usb', keywords: 'micro usb micro-usb マイクロusb android モバイルバッテリー' },
+      { name: 'USB-C', id: 'usb-c', keywords: 'usbc usb-c type-c タイプc スマホ ノートpc pd 高速充電' },
+      { name: 'Thunderbolt', id: 'thunderbolt', keywords: 'thunderbolt サンダーボルト 稲妻 高速 外付けssd ドック' }
+    ];
+
+    searchBox.addEventListener('input', function () {
+      const query = searchBox.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+
+      if (!query) return;
+
+      const matchedItems = items.filter(item =>
+        item.name.toLowerCase().includes(query) ||
+        item.keywords.toLowerCase().includes(query)
+      );
+
+      matchedItems.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + item.id;
+        a.textContent = item.name + ' の説明へ移動';
+        li.appendChild(a);
+        searchResults.appendChild(li);
+      });
+
+      if (matchedItems.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = '該当する項目がありません。';
+        searchResults.appendChild(li);
+      }
+    });
+  </script>
+</body>
+</html>

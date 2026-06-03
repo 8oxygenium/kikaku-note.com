@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>電池サイズ一覧・早見表｜単1・単2・単3・単4・ボタン電池｜規格ノート</title>
+  <meta name="description" content="単1、単2、単3、単4、単5、9V形、CR2032、CR2025、LR44など、乾電池・ボタン電池・コイン電池のサイズや用途を一覧で確認できる早見表です。">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3M3YRW4B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3M3YRW4B7');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+      color: #111827;
+      background: #f8fafc;
+    }
+
+    header,
+    main,
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+
+    h2 {
+      margin-top: 40px;
+      padding-left: 12px;
+      border-left: 6px solid #2563eb;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: #374151;
+    }
+
+    .search-box {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .quick-links a,
+    #searchResults a {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #2563eb;
+      border-radius: 6px;
+      background: #eff6ff;
+    }
+
+    #searchResults {
+      margin-bottom: 0;
+    }
+
+    .warning {
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #166534;
+      font-weight: 700;
+      margin: 16px 0 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    table {
+      width: 100%;
+      min-width: 860px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f4fbf;
+      color: #ffffff;
+      padding: 12px;
+      border: 1px solid #3b82f6;
+      text-align: center;
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      vertical-align: middle;
+      background: #ffffff;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #4b5563;
+      margin-top: 8px;
+    }
+
+    .battery-grid,
+    .use-grid,
+    .visual-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .battery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    }
+
+    .use-grid,
+    .visual-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .battery-card,
+    .use-card,
+    .visual-card {
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    }
+
+    .battery-card {
+      text-align: center;
+    }
+
+    .battery-name {
+      font-size: 24px;
+      font-weight: 900;
+      color: #1d4ed8;
+    }
+
+    .battery-size {
+      font-size: 15px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .battery-use {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .svg-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 120px;
+      margin: 8px 0 12px;
+    }
+
+    svg {
+      max-width: 190px;
+      height: auto;
+    }
+
+    .label {
+      font-size: 13px;
+      font-weight: 800;
+      fill: #111827;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+      }
+
+      .top-link {
+        display: inline-block;
+        margin-top: 12px;
+      }
+
+      main,
+      header,
+      footer {
+        padding: 16px;
+      }
+    }
+
+.affiliate-footer {
+  margin: 28px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, var(--line, #dedbd2));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--muted, #666);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.affiliate-label {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted, #666);
+}
+
+.affiliate-note {
+  margin: 0 0 10px;
+}
+
+.amazon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--accent, #006c67);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-ink, var(--accent, #006c67));
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amazon-button:hover,
+.amazon-button:focus-visible {
+  background: var(--soft, #f4f1ea);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .affiliate-footer {
+    margin: 22px 0 14px;
+    padding: 12px 14px;
+  }
+
+  .amazon-button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>電池サイズ一覧</h1>
+      <p class="lead">単1・単2・単3・単4・9V形・ボタン電池を確認できる早見表です。</p>
+    </div>
+    <a class="top-link" href="https://kikaku-note.com/">規格ノート本体へ戻る</a>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <input
+        type="search"
+        id="searchBox"
+        placeholder="電池名を入力　例：単3、単4、CR2032、LR44、9V"
+      >
+
+      <div class="quick-links">
+        <a href="#dry-cell">乾電池</a>
+        <a href="#coin-cell">ボタン電池・コイン電池</a>
+        <a href="#use-case">用途別早見</a>
+        <a href="#battery-visual">簡易図</a>
+      </div>
+
+      <ul id="searchResults"></ul>
+    </section>
+
+    <p class="warning">
+      注意：同じ形状でも、アルカリ電池・マンガン電池・リチウム電池・充電池では電圧や特性が異なる場合があります。機器側の指定を確認してください。
+    </p>
+
+    <h2 id="dry-cell">乾電池サイズ表</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>日本表記</th>
+            <th>主な海外表記</th>
+            <th>サイズ目安</th>
+            <th>公称電圧</th>
+            <th>主な用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>単1</td>
+            <td>D</td>
+            <td>約34.2 × 61.5 mm</td>
+            <td>1.5V</td>
+            <td>大型懐中電灯、ラジカセ、防災用品</td>
+          </tr>
+          <tr>
+            <td>単2</td>
+            <td>C</td>
+            <td>約26.2 × 50.0 mm</td>
+            <td>1.5V</td>
+            <td>中型ライト、玩具、ガスコンロ</td>
+          </tr>
+          <tr>
+            <td>単3</td>
+            <td>AA</td>
+            <td>約14.5 × 50.5 mm</td>
+            <td>1.5V</td>
+            <td>リモコン、時計、マウス、玩具</td>
+          </tr>
+          <tr>
+            <td>単4</td>
+            <td>AAA</td>
+            <td>約10.5 × 44.5 mm</td>
+            <td>1.5V</td>
+            <td>小型リモコン、ライト、体温計</td>
+          </tr>
+          <tr>
+            <td>単5</td>
+            <td>N</td>
+            <td>約12.0 × 30.2 mm</td>
+            <td>1.5V</td>
+            <td>小型機器、特殊なリモコン</td>
+          </tr>
+          <tr>
+            <td>9V形</td>
+            <td>006P / 6F22</td>
+            <td>約26.5 × 17.5 × 48.5 mm</td>
+            <td>9V</td>
+            <td>テスター、エフェクター、防犯機器</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="coin-cell">ボタン電池・コイン電池一覧</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>型番</th>
+            <th>種類</th>
+            <th>サイズ目安</th>
+            <th>公称電圧</th>
+            <th>主な用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CR2032</td>
+            <td>リチウムコイン電池</td>
+            <td>直径20.0 × 厚さ3.2 mm</td>
+            <td>3V</td>
+            <td>車のキー、PCのCMOS、体重計</td>
+          </tr>
+          <tr>
+            <td>CR2025</td>
+            <td>リチウムコイン電池</td>
+            <td>直径20.0 × 厚さ2.5 mm</td>
+            <td>3V</td>
+            <td>薄型リモコン、カード型機器</td>
+          </tr>
+          <tr>
+            <td>CR2016</td>
+            <td>リチウムコイン電池</td>
+            <td>直径20.0 × 厚さ1.6 mm</td>
+            <td>3V</td>
+            <td>薄型機器、小型ライト</td>
+          </tr>
+          <tr>
+            <td>LR44</td>
+            <td>アルカリボタン電池</td>
+            <td>直径11.6 × 厚さ5.4 mm</td>
+            <td>1.5V</td>
+            <td>小型ライト、玩具、体温計</td>
+          </tr>
+          <tr>
+            <td>SR44</td>
+            <td>酸化銀電池</td>
+            <td>直径11.6 × 厚さ5.4 mm</td>
+            <td>1.55V</td>
+            <td>時計、測定器、カメラ周辺機器</td>
+          </tr>
+          <tr>
+            <td>LR41</td>
+            <td>アルカリボタン電池</td>
+            <td>直径7.9 × 厚さ3.6 mm</td>
+            <td>1.5V</td>
+            <td>小型ライト、体温計、玩具</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">※サイズは代表的な目安です。メーカーや規格表記によって若干異なる場合があります。</p>
+
+    <h2>よく使う電池</h2>
+
+    <div class="battery-grid">
+      <section class="battery-card">
+        <div class="battery-name">単3</div>
+        <div class="battery-size">AA / 約14.5 × 50.5 mm</div>
+        <p class="battery-use">リモコン、時計、マウス、玩具でよく使われる定番サイズ。</p>
+      </section>
+
+      <section class="battery-card">
+        <div class="battery-name">単4</div>
+        <div class="battery-size">AAA / 約10.5 × 44.5 mm</div>
+        <p class="battery-use">小型リモコン、ライト、体温計などで使われる細い電池。</p>
+      </section>
+
+      <section class="battery-card">
+        <div class="battery-name">CR2032</div>
+        <div class="battery-size">直径20.0 × 厚さ3.2 mm</div>
+        <p class="battery-use">車のキー、PC、体重計などでよく使われるコイン電池。</p>
+      </section>
+
+      <section class="battery-card">
+        <div class="battery-name">LR44</div>
+        <div class="battery-size">直径11.6 × 厚さ5.4 mm</div>
+        <p class="battery-use">小型ライト、玩具、体温計などで使われるボタン電池。</p>
+      </section>
+    </div>
+
+    <h2 id="use-case">用途別早見表</h2>
+
+    <div class="use-grid">
+      <section class="use-card">
+        <h3>テレビ・エアコンのリモコン</h3>
+        <p><strong>単3 / 単4</strong></p>
+        <p>家庭用リモコンでは単3か単4が多く使われます。電池ふたの内側の表記を確認してください。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>時計</h3>
+        <p><strong>単3 / 単4 / SR系ボタン電池</strong></p>
+        <p>壁掛け時計は単3、小型時計や腕時計はボタン電池が多いです。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>車のスマートキー</h3>
+        <p><strong>CR2032 / CR2025 など</strong></p>
+        <p>車種によって型番が異なります。交換前に必ず本体内の型番を確認してください。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>懐中電灯・防災用品</h3>
+        <p><strong>単1 / 単2 / 単3</strong></p>
+        <p>大型ライトでは単1や単2、小型ライトでは単3や単4が使われます。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>体重計・キッチンスケール</h3>
+        <p><strong>単4 / CR2032 など</strong></p>
+        <p>薄型の機器ではコイン電池、やや大型の機器では単4が多く使われます。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>カメラ周辺機器</h3>
+        <p><strong>単3 / CR2 / CR123A / SR44 など</strong></p>
+        <p>ストロボ、露出計、古いカメラアクセサリーでは専用電池が使われる場合があります。</p>
+      </section>
+    </div>
+
+    <h2 id="battery-visual">電池サイズの簡易図</h2>
+
+    <div class="visual-grid">
+      <section class="visual-card">
+        <h3>乾電池のサイズ感</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 260 150" role="img" aria-label="乾電池サイズの簡易図">
+            <rect x="20" y="20" width="42" height="110" rx="10" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="28" y="145" class="label">単1</text>
+
+            <rect x="80" y="35" width="34" height="95" rx="9" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="86" y="145" class="label">単2</text>
+
+            <rect x="132" y="50" width="24" height="80" rx="8" fill="#93c5fd" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="132" y="145" class="label">単3</text>
+
+            <rect x="174" y="64" width="18" height="66" rx="7" fill="#60a5fa" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="174" y="145" class="label">単4</text>
+
+            <rect x="210" y="82" width="34" height="48" rx="4" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+            <text x="210" y="145" class="label">9V</text>
+          </svg>
+        </div>
+        <p>単1が最も大きく、単4は細く小さいサイズです。9V形は角型です。</p>
+      </section>
+
+      <section class="visual-card">
+        <h3>コイン電池の見方</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 260 150" role="img" aria-label="コイン電池サイズの簡易図">
+            <circle cx="70" cy="72" r="42" fill="#e5e7eb" stroke="#374151" stroke-width="4"/>
+            <text x="42" y="78" class="label">CR2032</text>
+            <rect x="145" y="50" width="70" height="44" rx="6" fill="#fef3c7" stroke="#92400e" stroke-width="3"/>
+            <text x="154" y="77" class="label">20 × 3.2</text>
+          </svg>
+        </div>
+        <p>CR2032は「直径20mm・厚さ3.2mm」という意味で読むと覚えやすいです。</p>
+      </section>
+
+      <section class="visual-card">
+        <h3>単3と単4の違い</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 260 150" role="img" aria-label="単3と単4の違い">
+            <rect x="70" y="30" width="34" height="95" rx="9" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="70" y="145" class="label">単3 / AA</text>
+
+            <rect x="155" y="45" width="24" height="80" rx="8" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="148" y="145" class="label">単4 / AAA</text>
+          </svg>
+        </div>
+        <p>単4は単3より細く短い電池です。見た目が似ているので交換時は表記を確認します。</p>
+      </section>
+    </div>
+
+    <p class="warning">
+      電池交換時は、電池の向き・型番・電圧・充電可否を確認してください。異なる種類の電池を混ぜて使うのは避けてください。
+    </p>
+  </main>
+
+  <section class="affiliate-footer" aria-label="広告とAmazonアソシエイトについて">
+    <p class="affiliate-label">PR</p>
+    <p class="affiliate-note">このページにはアフィリエイトリンクを含みます。<br>Amazonのアソシエイトとして、規格ノートは適格販売により収入を得ています。</p>
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=関連商品&tag=YOUR_TRACKING_ID-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+  </section>
+
+  <footer>
+    <span>© 規格ノート</span>
+    <a href="https://kikaku-note.com/">規格ノート本体へ戻る</a>
+  </footer>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const searchResults = document.getElementById('searchResults');
+
+    const items = [
+      { name: '単1', id: 'dry-cell', keywords: '単1 たん1 d 大型 懐中電灯 防災' },
+      { name: '単2', id: 'dry-cell', keywords: '単2 たん2 c 中型 ライト 玩具' },
+      { name: '単3', id: 'dry-cell', keywords: '単3 たん3 aa リモコン 時計 マウス' },
+      { name: '単4', id: 'dry-cell', keywords: '単4 たん4 aaa 小型 リモコン ライト' },
+      { name: '単5', id: 'dry-cell', keywords: '単5 たん5 n 小型 特殊' },
+      { name: '9V', id: 'dry-cell', keywords: '9v 006p 6f22 テスター エフェクター' },
+      { name: 'CR2032', id: 'coin-cell', keywords: 'cr2032 コイン電池 車のキー cmos 体重計' },
+      { name: 'CR2025', id: 'coin-cell', keywords: 'cr2025 コイン電池 薄型 リモコン' },
+      { name: 'CR2016', id: 'coin-cell', keywords: 'cr2016 コイン電池 薄型 小型' },
+      { name: 'LR44', id: 'coin-cell', keywords: 'lr44 ボタン電池 アルカリ 玩具 体温計' },
+      { name: 'SR44', id: 'coin-cell', keywords: 'sr44 ボタン電池 酸化銀 時計 カメラ' },
+      { name: 'LR41', id: 'coin-cell', keywords: 'lr41 ボタン電池 小型ライト 体温計' }
+    ];
+
+    searchBox.addEventListener('input', function () {
+      const query = searchBox.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+
+      if (!query) return;
+
+      const matchedItems = items.filter(item =>
+        item.name.toLowerCase().includes(query) ||
+        item.keywords.toLowerCase().includes(query)
+      );
+
+      matchedItems.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + item.id;
+        a.textContent = item.name + ' の一覧へ移動';
+        li.appendChild(a);
+        searchResults.appendChild(li);
+      });
+
+      if (matchedItems.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = '該当する項目がありません。';
+        searchResults.appendChild(li);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>坪・㎡・畳 変換ツール</title>
+  <meta name="description" content="坪・平方メートル・畳を相互変換できる無料ツール。㎡から坪・畳、坪から㎡・畳、畳から㎡・坪をすぐに計算できます。不動産広告、部屋探し、撮影スペース確認に便利です。">
+  <link rel="canonical" href="https://kikaku-note.com/area/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kikaku-note.com/area/">
+  <meta property="og:site_name" content="規格ノート">
+  <meta property="og:title" content="坪・㎡・畳 変換ツール">
+  <meta property="og:description" content="坪・平方メートル・畳を相互変換できる1ページ完結型の便利ツールです。">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#f5f7f8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3M3YRW4B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3M3YRW4B7');
+  </script>
+  <style>
+    :root {
+      --bg: #f5f7f8;
+      --paper: #ffffff;
+      --ink: #202124;
+      --muted: #61646b;
+      --line: #d9e1e2;
+      --accent: #1f6f68;
+      --accent-soft: #e8f5f2;
+      --warn: #8a5a18;
+      --shadow: 0 18px 48px rgba(33, 47, 52, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner,
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 14px;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card {
+      padding: 22px;
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .summary-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .summary-list strong {
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .converter-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .converter {
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    input {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 1.1rem;
+    }
+
+    input:focus {
+      outline: 3px solid rgba(31, 111, 104, 0.18);
+      border-color: var(--accent);
+    }
+
+    .unit {
+      min-width: 44px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .result-box {
+      display: grid;
+      gap: 10px;
+    }
+
+    .result {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+    }
+
+    .result span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .result output {
+      color: var(--accent);
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+    }
+
+    th {
+      background: #eef4f3;
+      color: #3f3b35;
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .text-card {
+      padding: 22px;
+    }
+
+    .note {
+      border-left: 4px solid var(--warn);
+      padding: 12px 14px;
+      background: #fff7e8;
+      color: #49361c;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .formula-list,
+    .usage-list {
+      margin: 0;
+      padding-left: 1.25em;
+    }
+
+    .formula-list li,
+    .usage-list li {
+      margin: 0 0 8px;
+    }
+
+    code {
+      padding: 0.12em 0.35em;
+      border-radius: 6px;
+      background: #edf2f2;
+      font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      font-size: 0.94em;
+    }
+
+    .site-footer {
+      margin-top: 34px;
+      padding: 28px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero-grid,
+      .converter-grid,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card,
+      .converter,
+      .text-card {
+        padding: 18px;
+      }
+    }
+
+.affiliate-footer {
+  margin: 28px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, var(--line, #dedbd2));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--muted, #666);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.affiliate-label {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted, #666);
+}
+
+.affiliate-note {
+  margin: 0 0 10px;
+}
+
+.amazon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--accent, #006c67);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-ink, var(--accent, #006c67));
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amazon-button:hover,
+.amazon-button:focus-visible {
+  background: var(--soft, #f4f1ea);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .affiliate-footer {
+    margin: 22px 0 14px;
+    padding: 12px 14px;
+  }
+
+  .amazon-button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/area/">規格ノート / area</a>
+      <nav class="nav" aria-label="ページ内メニュー">
+        <a href="#converter">変換</a>
+        <a href="#chart">早見表</a>
+        <a href="#formula">計算式</a>
+        <a href="#usage">使い方</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">1坪 = 3.305785㎡ / 1畳 = 1.62㎡</p>
+          <h1>坪・㎡・畳 変換ツール</h1>
+          <p class="lead">坪、平方メートル、畳を相互変換できる1ページ完結型の便利ツールです。部屋探しや不動産広告の面積確認、撮影スペースの広さチェックに使えます。</p>
+        </div>
+        <aside class="card summary-card" aria-label="変換基準">
+          <h2>変換基準</h2>
+          <ul class="summary-list">
+            <li><span>1坪</span><strong>3.305785㎡</strong></li>
+            <li><span>1畳</span><strong>1.62㎡</strong></li>
+            <li><span>坪から畳</span><strong>約2.04畳</strong></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="converter" class="section">
+      <div class="wrap">
+        <h2>面積を変換する</h2>
+        <div class="converter-grid">
+          <article class="card converter">
+            <h3>㎡ → 坪・畳</h3>
+            <label for="sqm-input">平方メートルを入力</label>
+            <div class="input-row">
+              <input id="sqm-input" type="number" min="0" step="0.01" inputmode="decimal" value="30" aria-describedby="sqm-help">
+              <span class="unit">㎡</span>
+            </div>
+            <p id="sqm-help" class="lead">例: 30㎡の部屋</p>
+            <div class="result-box">
+              <div class="result"><span>坪</span><output id="sqm-to-tsubo">-</output></div>
+              <div class="result"><span>畳</span><output id="sqm-to-jo">-</output></div>
+            </div>
+          </article>
+
+          <article class="card converter">
+            <h3>坪 → ㎡・畳</h3>
+            <label for="tsubo-input">坪数を入力</label>
+            <div class="input-row">
+              <input id="tsubo-input" type="number" min="0" step="0.01" inputmode="decimal" value="10" aria-describedby="tsubo-help">
+              <span class="unit">坪</span>
+            </div>
+            <p id="tsubo-help" class="lead">例: 10坪のスペース</p>
+            <div class="result-box">
+              <div class="result"><span>㎡</span><output id="tsubo-to-sqm">-</output></div>
+              <div class="result"><span>畳</span><output id="tsubo-to-jo">-</output></div>
+            </div>
+          </article>
+
+          <article class="card converter">
+            <h3>畳 → ㎡・坪</h3>
+            <label for="jo-input">畳数を入力</label>
+            <div class="input-row">
+              <input id="jo-input" type="number" min="0" step="0.1" inputmode="decimal" value="6" aria-describedby="jo-help">
+              <span class="unit">畳</span>
+            </div>
+            <p id="jo-help" class="lead">例: 6畳の部屋</p>
+            <div class="result-box">
+              <div class="result"><span>㎡</span><output id="jo-to-sqm">-</output></div>
+              <div class="result"><span>坪</span><output id="jo-to-tsubo">-</output></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="chart" class="section">
+      <div class="wrap">
+        <h2>坪・㎡・畳 早見表</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>目安</th>
+                <th>㎡</th>
+                <th>坪</th>
+                <th>畳</th>
+              </tr>
+            </thead>
+            <tbody id="quick-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="formula" class="section">
+      <div class="wrap content-grid">
+        <article class="card text-card">
+          <h2>計算式</h2>
+          <ul class="formula-list">
+            <li>㎡から坪: <code>㎡ ÷ 3.305785</code></li>
+            <li>㎡から畳: <code>㎡ ÷ 1.62</code></li>
+            <li>坪から㎡: <code>坪 × 3.305785</code></li>
+            <li>坪から畳: <code>坪 × 3.305785 ÷ 1.62</code></li>
+            <li>畳から㎡: <code>畳 × 1.62</code></li>
+            <li>畳から坪: <code>畳 × 1.62 ÷ 3.305785</code></li>
+          </ul>
+        </article>
+
+        <article class="card text-card">
+          <h2>畳数の注意書き</h2>
+          <p class="note">畳の面積は地域や物件表示の基準によって差があります。このツールでは、わかりやすい目安として <strong>1畳 = 1.62㎡</strong> で計算しています。</p>
+          <p>不動産広告では「約」「帖」などの表記が使われることがあります。正確な広さが必要な場合は、図面や募集要項の平方メートル表記もあわせて確認してください。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="usage" class="section">
+      <div class="wrap content-grid">
+        <article class="card text-card">
+          <h2>使い方</h2>
+          <ul class="usage-list">
+            <li>部屋探しでは、㎡表記の物件を畳数に直して生活感をつかめます。</li>
+            <li>不動産広告では、坪単価や専有面積の比較に使えます。</li>
+            <li>撮影スペース確認では、機材や背景紙を置ける広さの目安を出せます。</li>
+          </ul>
+        </article>
+
+        <article class="card text-card">
+          <h2>関連リンク</h2>
+          <p>規格や単位のメモをまとめた関連サイトです。</p>
+          <p><a href="https://kikaku-note.com/">規格ノート</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <section class="affiliate-footer" aria-label="広告とAmazonアソシエイトについて">
+    <p class="affiliate-label">PR</p>
+    <p class="affiliate-note">このページにはアフィリエイトリンクを含みます。<br>Amazonのアソシエイトとして、規格ノートは適格販売により収入を得ています。</p>
+<<<<<<< HEAD
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=関連商品&tag=YOUR_TRACKING_ID-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+=======
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=メジャー+巻尺&tag=kikakunote-footer-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+>>>>>>> 9df1525630ac7406b588c47f660c4b36ab477c64
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>&copy; 規格ノート</span>
+      <a href="https://kikaku-note.com/">kikaku-note.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const SQM_PER_TSUBO = 3.305785;
+    const SQM_PER_JO = 1.62;
+
+    const fmt = (value, unit) => {
+      if (!Number.isFinite(value)) return '-';
+      const digits = value >= 100 ? 1 : 2;
+      return `${value.toLocaleString('ja-JP', { maximumFractionDigits: digits })}${unit}`;
+    };
+
+    const read = (id) => {
+      const value = Number(document.getElementById(id).value);
+      return value >= 0 ? value : NaN;
+    };
+
+    const write = (id, value, unit) => {
+      document.getElementById(id).value = fmt(value, unit);
+    };
+
+    const updateConverters = () => {
+      const sqm = read('sqm-input');
+      write('sqm-to-tsubo', sqm / SQM_PER_TSUBO, '坪');
+      write('sqm-to-jo', sqm / SQM_PER_JO, '畳');
+
+      const tsubo = read('tsubo-input');
+      const tsuboSqm = tsubo * SQM_PER_TSUBO;
+      write('tsubo-to-sqm', tsuboSqm, '㎡');
+      write('tsubo-to-jo', tsuboSqm / SQM_PER_JO, '畳');
+
+      const jo = read('jo-input');
+      const joSqm = jo * SQM_PER_JO;
+      write('jo-to-sqm', joSqm, '㎡');
+      write('jo-to-tsubo', joSqm / SQM_PER_TSUBO, '坪');
+    };
+
+    const buildQuickTable = () => {
+      const rows = [
+        ['4.5畳', 4.5 * SQM_PER_JO],
+        ['6畳', 6 * SQM_PER_JO],
+        ['8畳', 8 * SQM_PER_JO],
+        ['10畳', 10 * SQM_PER_JO],
+        ['20㎡', 20],
+        ['30㎡', 30],
+        ['40㎡', 40],
+        ['50㎡', 50],
+        ['10坪', 10 * SQM_PER_TSUBO],
+        ['20坪', 20 * SQM_PER_TSUBO]
+      ];
+
+      const tbody = document.getElementById('quick-table');
+      tbody.innerHTML = rows.map(([label, sqm]) => `
+        <tr>
+          <td>${label}</td>
+          <td>${fmt(sqm, '㎡')}</td>
+          <td>${fmt(sqm / SQM_PER_TSUBO, '坪')}</td>
+          <td>${fmt(sqm / SQM_PER_JO, '畳')}</td>
+        </tr>
+      `).join('');
+    };
+
+    document.querySelectorAll('input[type="number"]').forEach((input) => {
+      input.addEventListener('input', updateConverters);
+    });
+
+    buildQuickTable();
+    updateConverters();
+  </script>
+</body>
+</html>

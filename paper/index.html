@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>用紙サイズ一覧・早見表｜A判・B判・はがき・名刺・写真サイズ｜規格ノート</title>
+  <meta name="description" content="A4、A3、B5、はがき、名刺、L判、2L判など、よく使う用紙サイズをmm単位で確認できる早見表です。A判・B判・写真サイズ・用途別サイズを一覧でまとめています。">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3M3YRW4B7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C3M3YRW4B7');
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.8;
+      color: #111827;
+      background: #f8fafc;
+    }
+
+    header,
+    main,
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(32px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+    }
+
+    h2 {
+      margin-top: 40px;
+      padding-left: 12px;
+      border-left: 6px solid #2563eb;
+      font-size: 24px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: #374151;
+    }
+
+    .search-box {
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    input[type="search"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .quick-links a,
+    #searchResults a {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid #2563eb;
+      border-radius: 6px;
+      background: #eff6ff;
+    }
+
+    #searchResults {
+      margin-bottom: 0;
+    }
+
+    .warning {
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #166534;
+      font-weight: 700;
+      margin: 16px 0 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th {
+      background: #0f4fbf;
+      color: #ffffff;
+      padding: 12px;
+      border: 1px solid #3b82f6;
+      text-align: center;
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      vertical-align: middle;
+      background: #ffffff;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #4b5563;
+      margin-top: 8px;
+    }
+
+    .paper-grid,
+    .use-grid,
+    .visual-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .paper-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .use-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .visual-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .paper-card,
+    .use-card,
+    .visual-card {
+      background: #ffffff;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    }
+
+    .paper-card {
+      text-align: center;
+    }
+
+    .paper-name {
+      font-size: 24px;
+      font-weight: 900;
+      color: #1d4ed8;
+    }
+
+    .paper-size {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .paper-use {
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .svg-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 130px;
+      margin: 8px 0 12px;
+    }
+
+    svg {
+      max-width: 180px;
+      height: auto;
+    }
+
+    .size-label {
+      font-size: 13px;
+      font-weight: 800;
+      fill: #111827;
+    }
+
+    .muted {
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+      }
+
+      .top-link {
+        display: inline-block;
+        margin-top: 12px;
+      }
+
+      main,
+      header,
+      footer {
+        padding: 16px;
+      }
+    }
+
+.affiliate-footer {
+  margin: 28px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, var(--line, #dedbd2));
+  border-radius: 8px;
+  background: var(--paper, #fff);
+  color: var(--muted, #666);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.affiliate-label {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted, #666);
+}
+
+.affiliate-note {
+  margin: 0 0 10px;
+}
+
+.amazon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--accent, #006c67);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent-ink, var(--accent, #006c67));
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amazon-button:hover,
+.amazon-button:focus-visible {
+  background: var(--soft, #f4f1ea);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .affiliate-footer {
+    margin: 22px 0 14px;
+    padding: 12px 14px;
+  }
+
+  .amazon-button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>用紙サイズ一覧</h1>
+      <p class="lead">A判・B判・はがき・名刺・写真サイズをmm単位で確認できる早見表です。</p>
+    </div>
+    <a class="top-link" href="https://kikaku-note.com/">規格ノート本体へ戻る</a>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <input
+        type="search"
+        id="searchBox"
+        placeholder="用紙名を入力　例：A4、B5、はがき、名刺、L判"
+      >
+
+      <div class="quick-links">
+        <a href="#a-series">A判</a>
+        <a href="#b-series">B判</a>
+        <a href="#postcard-card-photo">はがき・名刺・写真</a>
+        <a href="#common-use">用途別早見</a>
+        <a href="#paper-visual">簡易図</a>
+      </div>
+
+      <ul id="searchResults"></ul>
+    </section>
+
+    <p class="warning">
+      注意：印刷物は、仕上がりサイズとは別に「塗り足し」や「余白」が必要になる場合があります。入稿時は印刷会社の指定を確認してください。
+    </p>
+
+    <h2 id="a-series">A判サイズ表</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>サイズ名</th>
+            <th>寸法 mm</th>
+            <th>主な用途</th>
+            <th>ひとつ大きいサイズとの関係</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A0</td>
+            <td>841 × 1189 mm</td>
+            <td>大型ポスター、図面</td>
+            <td>A1の2枚分</td>
+          </tr>
+          <tr>
+            <td>A1</td>
+            <td>594 × 841 mm</td>
+            <td>ポスター、建築図面</td>
+            <td>A2の2枚分</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>420 × 594 mm</td>
+            <td>ポスター、掲示物</td>
+            <td>A3の2枚分</td>
+          </tr>
+          <tr>
+            <td>A3</td>
+            <td>297 × 420 mm</td>
+            <td>資料、図面、メニュー</td>
+            <td>A4の2枚分</td>
+          </tr>
+          <tr>
+            <td>A4</td>
+            <td>210 × 297 mm</td>
+            <td>書類、コピー用紙、提出資料</td>
+            <td>A5の2枚分</td>
+          </tr>
+          <tr>
+            <td>A5</td>
+            <td>148 × 210 mm</td>
+            <td>冊子、ノート、小冊子</td>
+            <td>A6の2枚分</td>
+          </tr>
+          <tr>
+            <td>A6</td>
+            <td>105 × 148 mm</td>
+            <td>文庫本、メモ、カード</td>
+            <td>A7の2枚分</td>
+          </tr>
+          <tr>
+            <td>A7</td>
+            <td>74 × 105 mm</td>
+            <td>小型メモ、チケット</td>
+            <td>A8の2枚分</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="b-series">B判サイズ表</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>サイズ名</th>
+            <th>寸法 mm</th>
+            <th>主な用途</th>
+            <th>ひとつ大きいサイズとの関係</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B0</td>
+            <td>1030 × 1456 mm</td>
+            <td>大型ポスター、掲示物</td>
+            <td>B1の2枚分</td>
+          </tr>
+          <tr>
+            <td>B1</td>
+            <td>728 × 1030 mm</td>
+            <td>ポスター、展示パネル</td>
+            <td>B2の2枚分</td>
+          </tr>
+          <tr>
+            <td>B2</td>
+            <td>515 × 728 mm</td>
+            <td>ポスター、カレンダー</td>
+            <td>B3の2枚分</td>
+          </tr>
+          <tr>
+            <td>B3</td>
+            <td>364 × 515 mm</td>
+            <td>新聞折込、掲示物</td>
+            <td>B4の2枚分</td>
+          </tr>
+          <tr>
+            <td>B4</td>
+            <td>257 × 364 mm</td>
+            <td>原稿用紙、新聞折込、資料</td>
+            <td>B5の2枚分</td>
+          </tr>
+          <tr>
+            <td>B5</td>
+            <td>182 × 257 mm</td>
+            <td>ノート、冊子、教科書</td>
+            <td>B6の2枚分</td>
+          </tr>
+          <tr>
+            <td>B6</td>
+            <td>128 × 182 mm</td>
+            <td>手帳、単行本、小冊子</td>
+            <td>B7の2枚分</td>
+          </tr>
+          <tr>
+            <td>B7</td>
+            <td>91 × 128 mm</td>
+            <td>小型メモ、カード</td>
+            <td>B8の2枚分</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">※日本で一般的に使われるB判サイズです。</p>
+
+    <h2 id="postcard-card-photo">はがき・名刺・写真サイズ表</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>種類</th>
+            <th>寸法 mm</th>
+            <th>主な用途</th>
+            <th>メモ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>郵便はがき</td>
+            <td>100 × 148 mm</td>
+            <td>年賀状、案内状、DM</td>
+            <td>A6に近いサイズ</td>
+          </tr>
+          <tr>
+            <td>名刺</td>
+            <td>91 × 55 mm</td>
+            <td>ビジネスカード、ショップカード</td>
+            <td>日本でよく使われる一般的な名刺サイズ</td>
+          </tr>
+          <tr>
+            <td>L判</td>
+            <td>89 × 127 mm</td>
+            <td>写真プリント</td>
+            <td>一般的な写真サイズ</td>
+          </tr>
+          <tr>
+            <td>2L判</td>
+            <td>127 × 178 mm</td>
+            <td>大きめの写真プリント</td>
+            <td>L判の約2倍相当</td>
+          </tr>
+          <tr>
+            <td>KG判</td>
+            <td>102 × 152 mm</td>
+            <td>写真プリント、ポストカード風</td>
+            <td>海外系プリントで使われることがある</td>
+          </tr>
+          <tr>
+            <td>六切</td>
+            <td>203 × 254 mm</td>
+            <td>記念写真、額装写真</td>
+            <td>写真館などで使われることがある</td>
+          </tr>
+          <tr>
+            <td>四切</td>
+            <td>254 × 305 mm</td>
+            <td>大判写真、額装写真</td>
+            <td>写真展示・記念写真向け</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="common-use">用途別早見表</h2>
+
+    <div class="use-grid">
+      <section class="use-card">
+        <h3>一般書類</h3>
+        <p class="paper-name">A4</p>
+        <p class="paper-size">210 × 297 mm</p>
+        <p>コピー用紙、契約書、提出書類、家庭用プリンターで最もよく使われます。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>大きめの資料</h3>
+        <p class="paper-name">A3</p>
+        <p class="paper-size">297 × 420 mm</p>
+        <p>図面、メニュー、掲示資料、A4を見開きで使いたい場合に向いています。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>ノート・冊子</h3>
+        <p class="paper-name">B5</p>
+        <p class="paper-size">182 × 257 mm</p>
+        <p>学校ノート、教科書、冊子などでよく使われるサイズです。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>はがき・年賀状</h3>
+        <p class="paper-name">はがき</p>
+        <p class="paper-size">100 × 148 mm</p>
+        <p>年賀状、案内状、DM、ポストカード用途で使われます。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>ショップカード・名刺</h3>
+        <p class="paper-name">名刺</p>
+        <p class="paper-size">91 × 55 mm</p>
+        <p>一般的な日本の名刺サイズです。横型・縦型どちらでも使われます。</p>
+      </section>
+
+      <section class="use-card">
+        <h3>写真プリント</h3>
+        <p class="paper-name">L判</p>
+        <p class="paper-size">89 × 127 mm</p>
+        <p>家庭用・店舗プリントでよく使われる一般的な写真サイズです。</p>
+      </section>
+    </div>
+
+    <h2 id="paper-visual">用紙サイズの簡易図</h2>
+
+    <div class="visual-grid">
+      <section class="visual-card">
+        <h3>A判の比率イメージ</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 220 160" role="img" aria-label="A判サイズの簡易図">
+            <rect x="20" y="10" width="120" height="140" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+            <rect x="80" y="10" width="60" height="70" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"/>
+            <rect x="80" y="80" width="60" height="35" fill="#93c5fd" stroke="#1d4ed8" stroke-width="2"/>
+            <text x="35" y="36" class="size-label">A3</text>
+            <text x="96" y="36" class="size-label">A4</text>
+            <text x="96" y="102" class="size-label">A5</text>
+          </svg>
+        </div>
+        <p>同じA判の中では、数字が1つ増えると面積が半分になります。</p>
+      </section>
+
+      <section class="visual-card">
+        <h3>B判の比率イメージ</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 220 160" role="img" aria-label="B判サイズの簡易図">
+            <rect x="20" y="10" width="130" height="140" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+            <rect x="85" y="10" width="65" height="70" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+            <rect x="85" y="80" width="65" height="35" fill="#86efac" stroke="#15803d" stroke-width="2"/>
+            <text x="36" y="36" class="size-label">B3</text>
+            <text x="102" y="36" class="size-label">B4</text>
+            <text x="102" y="102" class="size-label">B5</text>
+          </svg>
+        </div>
+        <p>B判も、数字が1つ増えると面積が半分になります。A判より少し大きめです。</p>
+      </section>
+
+      <section class="visual-card">
+        <h3>よく使うサイズ感</h3>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 240 160" role="img" aria-label="よく使う用紙サイズの簡易図">
+            <rect x="20" y="10" width="80" height="115" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+            <text x="44" y="70" class="size-label">A4</text>
+
+            <rect x="115" y="35" width="64" height="90" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+            <text x="135" y="84" class="size-label">B5</text>
+
+            <rect x="190" y="65" width="34" height="55" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+            <text x="195" y="96" class="size-label">名刺</text>
+          </svg>
+        </div>
+        <p>A4を基準にすると、B5は少し小さく、名刺はかなり小さいサイズです。</p>
+      </section>
+    </div>
+
+    <p class="warning">
+      用紙サイズは同じ名前でも、印刷会社・写真店・サービスによって余白や推奨解像度が異なる場合があります。入稿・注文前に各サービスの指定を確認してください。
+    </p>
+  </main>
+
+  <section class="affiliate-footer" aria-label="広告とAmazonアソシエイトについて">
+    <p class="affiliate-label">PR</p>
+    <p class="affiliate-note">このページにはアフィリエイトリンクを含みます。<br>Amazonのアソシエイトとして、規格ノートは適格販売により収入を得ています。</p>
+<<<<<<< HEAD
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=関連商品&tag=YOUR_TRACKING_ID-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+=======
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=コピー用紙&tag=kikakunote-footer-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+>>>>>>> 31d66b15cd1d886dfe86d025e08f6b03c03332c9
+  </section>
+
+  <footer>
+    <span>© 規格ノート</span>
+    <a href="https://kikaku-note.com/">規格ノート本体へ戻る</a>
+  </footer>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const searchResults = document.getElementById('searchResults');
+
+    const items = [
+      { name: 'A0', id: 'a-series', keywords: 'a0 ポスター 図面 大型' },
+      { name: 'A1', id: 'a-series', keywords: 'a1 ポスター 図面' },
+      { name: 'A2', id: 'a-series', keywords: 'a2 ポスター 掲示物' },
+      { name: 'A3', id: 'a-series', keywords: 'a3 資料 図面 メニュー' },
+      { name: 'A4', id: 'a-series', keywords: 'a4 書類 コピー用紙 提出資料 プリンター' },
+      { name: 'A5', id: 'a-series', keywords: 'a5 冊子 ノート 小冊子' },
+      { name: 'A6', id: 'a-series', keywords: 'a6 文庫本 メモ カード' },
+      { name: 'B0', id: 'b-series', keywords: 'b0 大型ポスター 掲示物' },
+      { name: 'B1', id: 'b-series', keywords: 'b1 ポスター 展示パネル' },
+      { name: 'B2', id: 'b-series', keywords: 'b2 ポスター カレンダー' },
+      { name: 'B3', id: 'b-series', keywords: 'b3 新聞折込 掲示物' },
+      { name: 'B4', id: 'b-series', keywords: 'b4 原稿用紙 新聞折込 資料' },
+      { name: 'B5', id: 'b-series', keywords: 'b5 ノート 冊子 教科書' },
+      { name: 'B6', id: 'b-series', keywords: 'b6 手帳 単行本 小冊子' },
+      { name: 'はがき', id: 'postcard-card-photo', keywords: 'はがき ハガキ 葉書 年賀状 案内状 dm ポストカード' },
+      { name: '名刺', id: 'postcard-card-photo', keywords: '名刺 ショップカード ビジネスカード 91 55' },
+      { name: 'L判', id: 'postcard-card-photo', keywords: 'l判 写真 プリント 89 127' },
+      { name: '2L判', id: 'postcard-card-photo', keywords: '2l判 写真 大きめ プリント' },
+      { name: 'KG判', id: 'postcard-card-photo', keywords: 'kg判 写真 ポストカード' },
+      { name: '六切', id: 'postcard-card-photo', keywords: '六切 写真 記念写真 額装' },
+      { name: '四切', id: 'postcard-card-photo', keywords: '四切 写真 記念写真 額装' }
+    ];
+
+    searchBox.addEventListener('input', function () {
+      const query = searchBox.value.trim().toLowerCase();
+      searchResults.innerHTML = '';
+
+      if (!query) return;
+
+      const matchedItems = items.filter(item =>
+        item.name.toLowerCase().includes(query) ||
+        item.keywords.toLowerCase().includes(query)
+      );
+
+      matchedItems.forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + item.id;
+        a.textContent = item.name + ' の一覧へ移動';
+        li.appendChild(a);
+        searchResults.appendChild(li);
+      });
+
+      if (matchedItems.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = '該当する項目がありません。';
+        searchResults.appendChild(li);
+      }
+    });
+  </script>
+</body>
+</html>
