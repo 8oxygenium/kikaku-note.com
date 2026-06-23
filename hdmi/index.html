@@ -380,6 +380,9 @@
   }
 }
 </style>
+  <meta name="google-adsense-account" content="ca-pub-8518063363319616">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8518063363319616"
+    crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="wrap">
@@ -645,6 +648,56 @@
       </div>
     </section>
 
+    <section id="field-notes" class="search-target">
+      <h2>撮影現場でのHDMI ― 運営者の実感</h2>
+      <p>
+        規格ノートは、映像制作（HANSODE）で実際にカメラとモニター・レコーダー・スイッチャーをHDMIでつなぐ中で、
+        毎回つまずきやすかった点をまとめています。スペック表には載らない、現場でやりがちな失敗を共有します。
+      </p>
+
+      <h3>実際にやられがちな5つ</h3>
+      <ul>
+        <li>
+          <strong>カメラ側の端子は思った以上に弱い。</strong>
+          Mini HDMI・Micro HDMIは構造的にぐらつきやすく、ケーブルの自重や軽い引っ掛けで端子側が先に傷みます。
+          三脚固定のカメラでも、足で一度ケーブルを引っ掛けただけで接触不良になったことがあります。
+        </li>
+        <li>
+          <strong>「4Kで出している」と「4Kで録れている」は別。</strong>
+          カメラのHDMI出力解像度と、外部レコーダーの収録解像度は別設定です。
+          4K出力できる機種でも、収録中は自動でHDに落ちるものがあり、撮り終えてから気づくと取り返しがつきません。
+        </li>
+        <li>
+          <strong>クリーンHDMI出力の設定忘れ。</strong>
+          画面の撮影情報やフォーカス枠が乗ったまま、配信・収録にそのまま流れてしまう事故。
+          本番前に「情報表示オフ（クリーン出力）」を必ず確認します。
+        </li>
+        <li>
+          <strong>スイッチャーに挿しても映らない。</strong>
+          ATEM Miniなどに接続して真っ暗、というときは、HDCP・出力フォーマット・フレームレートの不一致がほとんど。
+          端子の相性ではなく設定側を疑うと早く解決します。
+        </li>
+        <li>
+          <strong>長いケーブルは時々ブラックアウトする。</strong>
+          延長を重ねた長尺HDMIは、ある日突然チラつき・瞬断が出ます。
+          延長で粘るより、短くするか光HDMI（アクティブ光ケーブル）に替えた方が結局安定します。
+        </li>
+      </ul>
+
+      <h3>だから、こう準備している</h3>
+      <ul>
+        <li>端子に力をかけないよう、<strong>L字端子やケーブルクランプ・ケージ</strong>で固定し、ケーブルの自重を端子で受けない。</li>
+        <li>短い<strong>Ultra High Speed HDMI</strong>を現場に複数本。1本のトラブルで進行が止まるので、本数で冗長化する。</li>
+        <li>カメラごとに「<strong>端子形状／クリーンHDMI／出力解像度</strong>」を事前チェックリスト化しておく。</li>
+        <li>大事な収録はHDMI任せにせず、<strong>カメラ内記録も同時に回す</strong>（HDMIが落ちても素材が残る保険）。</li>
+      </ul>
+
+      <p class="note ok">
+        まとめると、HDMIのトラブルの多くは「規格」ではなく「端子の物理的な弱さ」と「出力設定」で起きます。
+        買う前のバージョン確認と同じくらい、現場での固定とチェックリストが効きます。
+      </p>
+    </section>
+
     <section id="timeline" class="search-target">
       <h2>HDMIざっくり年表</h2>
       <div class="timeline">
@@ -691,7 +744,7 @@
   <section class="affiliate-footer" aria-label="広告とAmazonアソシエイトについて">
     <p class="affiliate-label">PR</p>
     <p class="affiliate-note">このページにはアフィリエイトリンクを含みます。<br>Amazonのアソシエイトとして、規格ノートは適格販売により収入を得ています。</p>
-    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=関連商品&tag=kikakunote-hdmi-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
+    <a class="amazon-button" href="https://www.amazon.co.jp/s?k=HDMIケーブル&tag=kikakunote-hdmi-22" target="_blank" rel="nofollow sponsored noopener">Amazonで関連商品を見る</a>
   </section>
 
   <footer class="wrap">
